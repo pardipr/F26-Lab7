@@ -12,12 +12,20 @@
 
 # TO DO 3: Run the script.
 import pandas as pd
-movies=pd.read_csv("C:\Users\roopr\Downloads\imdb_top_250.csv")
+import matplotlib.pyplot as plt
+movies=pd.read_csv("https://github.com/itiievskyi/IMDB-Top-250/blob/master/imdb_top_250.csv")
+print("The Summary of the Data")
+print(movies.describe())
+print("The First 10 Rows")
 print(movies.head(10))
+print("The Last 10 Rows")
 print(movies.tail(10))
 print(movies.columns)
 print("Earliest movie":movies['Year'].min())
+print("Latest movie":movies['Year'].max())
+print("Unique Values in the Genre")
 print(movies['Genre'].unique())
 list_not_usa_movies=movies[movies["Origin"]!="USA"]
-print(len(list_not_usa_movies))
+print("The Number of Movies that are not Made in the USA are:",len(list_not_usa_movies))
+ten_highest_rated_movies=movies
 
